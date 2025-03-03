@@ -7,21 +7,17 @@ public class Main {
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-        if(isBarking && clock > 20 && clock < 24) {
-            return true;
-        } else if (isBarking && clock > 0 && clock < 8){
-            return true;
-        } else {
+        if (clock < 0 || clock > 23) {
             return false;
         }
+        return isBarking && (clock < 8 || clock >= 21);
     }
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
 
-        if ((firstAge >= 13 && firstAge <= 19) || (secondAge >= 13 && secondAge <= 19) || (thirdAge >= 13 && thirdAge <= 19)) {
-            return true;
-        }
-        return false;
+        return (firstAge >= 13 && firstAge <= 19) ||
+                (secondAge >= 13 && secondAge <= 19) ||
+                (thirdAge >= 13 && thirdAge <= 19);
     }
 
     public static boolean isCatPlaying(boolean isSummer, int temp) {
