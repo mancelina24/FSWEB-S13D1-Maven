@@ -15,13 +15,7 @@ public class Main {
         if (clock < 0 || clock > 23) {
             return false;
         }
-
-        if (isBarking) {
-            if (clock >= 0 && clock < 8 || clock >= 20 && clock <= 23) {
-                return true;
-            }
-        }
-        return false;
+        return isBarking && (clock < 8 || clock >= 21);
     }
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
@@ -30,28 +24,25 @@ public class Main {
     }
 
     public static boolean isCatPlaying(boolean isSummer, int temp) {
-        if(isSummer){
-            return temp >= 25 && temp <=45;
-        }else{
-            return temp >= 25 && temp <=35;
-        }
+        int upperLimit=isSummer? 45 : 35;
+        return temp>=25 && temp <= upperLimit;
     }
 
     public static double area(double width, double height) {
 
-        if(width < 0 || height < 0){
+        if (width < 0 || height < 0) {
             return -1;
         }
-        return width*height;
+        return width * height;
     }
 
 
     public static double area(double radius) {
 
-        if(radius < 0){
+        if(radius < 0)
+        {
             return -1;
         }
-
         return radius*radius*Math.PI;
     }
 }
