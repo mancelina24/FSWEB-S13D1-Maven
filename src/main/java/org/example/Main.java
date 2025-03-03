@@ -12,10 +12,13 @@ public class Main {
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-        if (clock < 0 || clock > 23) {
+        if(isBarking && clock > 20 && clock < 24) {
+            return true;
+        } else if(isBarking && clock > 0 && clock < 8){
+            return true;
+        }else{
             return false;
         }
-        return isBarking && (clock < 8 || clock >= 21);
     }
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
