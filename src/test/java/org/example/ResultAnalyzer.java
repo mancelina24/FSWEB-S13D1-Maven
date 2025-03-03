@@ -59,7 +59,7 @@ public class ResultAnalyzer implements TestWatcher, AfterAllCallback {
 
         double score = (double) success / (success + failure);
         String userId = "220941";
-
+//feyza
         JSONObject json = new JSONObject();
         json.put("score", score);
         json.put("taskId", taskId);
