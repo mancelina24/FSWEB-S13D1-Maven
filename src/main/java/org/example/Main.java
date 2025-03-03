@@ -2,17 +2,18 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+
+
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-        if (clock < 0 || clock > 23) {
+        if(isBarking && clock > 20 && clock < 24) {
+            return true;
+        } else if (isBarking && clock > 0 && clock < 8){
+            return true;
+        } else {
             return false;
         }
-        if (isBarking && (clock >= 0 && clock < 8 || clock >= 20 && clock <= 23)) {
-            return true;
-        }
-        return false;
     }
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
@@ -29,10 +30,20 @@ public class Main {
     }
 
     public static double area(double width, double height) {
-       
+
+        if (width < 0 || height < 0) {
+            return -1;
+        }
+        return width * height;
     }
 
+
     public static double area(double radius) {
-       
+
+        if(radius < 0)
+        {
+            return -1;
+        }
+        return radius*radius*Math.PI;
     }
 }
