@@ -2,7 +2,12 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-
+        System.out.println("Hello world!");
+        System.out.println(shouldWakeUp(true,1));
+        System.out.println(hasTeen(9, 99, 19));
+        System.out.println(isCatPlaying(true, 10));
+        System.out.println(area(5.0, 4.0));
+        System.out.println(area(5.0));
 
     }
 
